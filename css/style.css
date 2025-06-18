@@ -1,0 +1,161 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+header nav ul li {
+  margin: 0 20px;
+}
+
+header nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Genres Section */
+.genres {
+  padding: 20px;
+}
+
+.genre {
+  margin-bottom: 30px;
+}
+
+.genre h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.books {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* Ensuring optimal image display */
+.books img {
+  width: 100%; /* Make images responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 350px; /* Max width for each image */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .books {
+    grid-template-columns: repeat(2, 1fr); /* Show 2 images per row on mobile */
+  }
+
+  /* Image adjustments for smaller screens */
+  .books img {
+    max-width: 200px; /* Smaller max-width for mobile */
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 769px) {
+  .books {
+    grid-template-columns: repeat(5, 1fr); /* Show 5 images per row on desktop */
+  }
+
+  .books img {
+    max-width: 350px; /* Max-width for images on desktop */
+  }
+}
+
+
+/* Search Results Specific Styles */
+.search-results {
+  padding: 2rem;
+}
+
+#results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.book {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+}
+
+.book img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.book h3 {
+  margin: 1rem;
+  font-size: 1.2rem;
+}
+
+.book .author {
+  margin: 0 1rem;
+  color: #666;
+}
+
+.book .price {
+  margin: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-to-cart {
+  display: block;
+  width: calc(100% - 2rem);
+  margin: 1rem;
+  padding: 0.5rem;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* Responsive styles for search results */
+@media screen and (max-width: 768px) {
+  .search-results .books {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .search-results .books {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
